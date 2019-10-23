@@ -16,7 +16,7 @@ cdef class Application:
         """
 
         self.app_config_p = &self.app_config
-        self.app_config_p.session_config.print_name_config = NULL    # How to initialize this function pointer with transport_layer_instance.transport_data()
+        self.app_config_p.session_config.print_name_config = self.transport_layer_instance.send_data    # How to initialize this function pointer with transport_layer_instance.transport_data()
         self.transport_layer_config = <void*> transport_layer_config # Corresponds to the structure transport_config_s in transport.pxd or transport_C.h
 
     cdef int validate_app(self, void* app_config, void* transport_config):

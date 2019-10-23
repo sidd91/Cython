@@ -12,7 +12,7 @@ cdef class Application:
     def __cinit__(self, transport_layer_config, transport_layer_instance):
         """
         transport_layer_config is the structure defined in the transport_C.h and wrapped up as a Cython Extension class
-        transport_layer_instance is the instance of the Transport Cython class which has transport_data() method
+        transport_layer_instance is the instance of the Transport Cython class which has send_data() method
         """
 
         self.app_config_p = &self.app_config
